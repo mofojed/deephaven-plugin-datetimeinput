@@ -5,9 +5,11 @@ import { WidgetComponentProps } from "@deephaven/plugin";
 import type { Widget } from "@deephaven/jsapi-types";
 import { DateTimeInput } from "@deephaven/components";
 
-const log = Log.module("deephaven-ui-datetimeinput.DeephavenUiDateTimeInput");
+const log = Log.module(
+  "@deephaven/js-plugin-datetimeinput/DeephavenPluginDateTimeInput"
+);
 
-export function DeephavenUiDateTimeInput(
+export function DeephavenPluginDateTimeInput(
   props: WidgetComponentProps
 ): JSX.Element {
   const { fetch } = props;
@@ -56,4 +58,4 @@ export function DeephavenUiDateTimeInput(
   return <DateTimeInput onChange={handleChange} defaultValue={date} />;
 }
 
-export default DeephavenUiDateTimeInput;
+export default DeephavenPluginDateTimeInput;

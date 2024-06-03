@@ -5,7 +5,7 @@ from deephaven.plugin.js import JsPlugin
 
 # This plugin allows the Python plugin to register a JavaScript plugin.
 # The properties will be filled in during the registration process.
-class DeephavenUiDateTimeInputJsPlugin(JsPlugin):
+class DeephavenPluginDateTimeInputJsPlugin(JsPlugin):
     def __init__(
         self,
         name: str,

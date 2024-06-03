@@ -1,3 +1,3 @@
-import { DeephavenUiDateTimeInputPlugin } from "./DeephavenUiDateTimeInputPlugin";
+import { DeephavenPluginDateTimeInputPlugin } from "./DeephavenPluginDateTimeInputPlugin";
 
-export default DeephavenUiDateTimeInputPlugin;
+export default DeephavenPluginDateTimeInputPlugin;

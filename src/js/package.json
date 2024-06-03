@@ -1,6 +1,6 @@
 {
-  "name": "deephaven-ui-datetimeinput",
-  "version": "0.1.0",
+  "name": "deephaven-plugin-datetimeinput",
+  "version": "0.2.0",
   "description": "DateTimeInput plugin for Deephaven",
   "keywords": [
     "Deephaven",

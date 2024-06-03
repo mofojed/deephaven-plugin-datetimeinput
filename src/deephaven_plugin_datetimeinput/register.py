@@ -1,23 +1,23 @@
 from deephaven.plugin import Registration, Callback
 from deephaven.plugin.utilities import create_js_plugin, DheSafeCallbackWrapper
 
-from .js_plugin import DeephavenUiDateTimeInputJsPlugin
-from .deephaven_ui_datetimeinput_type import DeephavenUiDateTimeInputType
+from .js_plugin import DeephavenPluginDateTimeInputJsPlugin
+from .deephaven_plugin_datetimeinput_type import DeephavenPluginDateTimeInputType
 
 # The namespace that the Python plugin will be registered under.
-PACKAGE_NAMESPACE = "deephaven_ui_datetimeinput"
+PACKAGE_NAMESPACE = "deephaven_plugin_datetimeinput"
 # Where the Javascript plugin is. This is set in setup.py.
 JS_NAME = "_js"
 # The JsPlugin class that will be created and registered.
-PLUGIN_CLASS = DeephavenUiDateTimeInputJsPlugin
+PLUGIN_CLASS = DeephavenPluginDateTimeInputJsPlugin
 
 
-class DeephavenUiDateTimeInputRegistration(Registration):
+class DeephavenPluginDateTimeInputRegistration(Registration):
     @classmethod
     def register_into(cls, callback: Callback) -> None:
 
         # Register the Python plugin
-        callback.register(DeephavenUiDateTimeInputType)
+        callback.register(DeephavenPluginDateTimeInputType)
 
         # The JavaScript plugin requires a special registration process, which is handled here
         js_plugin = create_js_plugin(

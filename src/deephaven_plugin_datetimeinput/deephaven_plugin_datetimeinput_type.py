@@ -4,10 +4,10 @@ import io
 from typing import Any
 from deephaven.plugin.object_type import MessageStream, BidirectionalObjectType
 
-from .deephaven_ui_datetimeinput_object import DateTimeInput
+from .deephaven_plugin_datetimeinput_object import DateTimeInput
 
 
-class DeephavenUiDateTimeInputMessageStream(MessageStream):
+class DeephavenPluginDateTimeInputMessageStream(MessageStream):
     """
     A custom MessageStream
 
@@ -69,15 +69,15 @@ class DeephavenUiDateTimeInputMessageStream(MessageStream):
 # The object type that will be registered with the plugin system.
 # The object is bidirectional, meaning it can send messages to and from the client.
 # A MessageStream is created for each object that is created. This needs to be saved and tied to the object.
-# The value returned by name() should match supportedTypes in DeephavenUiDateTimeInputPlugin.ts
-class DeephavenUiDateTimeInputType(BidirectionalObjectType):
+# The value returned by name() should match supportedTypes in DeephavenPluginDateTimeInputPlugin.ts
+class DeephavenPluginDateTimeInputType(BidirectionalObjectType):
     """
     Defines the Element type for the Deephaven plugin system.
     """
 
     @property
     def name(self) -> str:
-        return "DeephavenUiDateTimeInput"
+        return "DeephavenPluginDateTimeInput"
 
     def is_type(self, obj: Any) -> bool:
         return isinstance(obj, DateTimeInput)
@@ -85,5 +85,5 @@ class DeephavenUiDateTimeInputType(BidirectionalObjectType):
     def create_client_connection(
         self, obj: object, connection: MessageStream
     ) -> MessageStream:
-        message_stream = DeephavenUiDateTimeInputMessageStream(obj, connection)
+        message_stream = DeephavenPluginDateTimeInputMessageStream(obj, connection)
         return message_stream
